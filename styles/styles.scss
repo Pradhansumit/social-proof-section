@@ -1,0 +1,226 @@
+//--------Colors--------
+
+// Primary
+
+$darkmagenta: hsl(300, 43%, 22%);
+$softpink: hsl(333, 80%, 67%);
+
+// Neutral
+
+$dgrayishmagenta: hsl(303, 10%, 53%);
+$lgrayishmagenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+//Typography
+
+$primaryfont: 15px;
+
+$ffam: "League Spartan", sans-serif;
+$freg: 400;
+$fmed: 500;
+$fbold: 700;
+
+//globals
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  font: {
+    family: $ffam;
+    size: $primaryfont;
+    weight: $freg;
+  }
+  line-height: 1.3;
+}
+
+.wrapper {
+  padding: 3rem 1.5rem;
+  .header-container {
+    margin-bottom: 1.75rem;
+    text-align: center;
+
+    h1 {
+      &.heading {
+        color: $darkmagenta;
+        font: {
+          size: 2.5rem;
+        }
+        line-height: 0.8;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  p {
+    &.desc {
+      color: $darkmagenta;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+.ratings-container {
+  margin-bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  .ratings-box {
+    padding: 0.75rem;
+    background: $lgrayishmagenta;
+    text-align: center;
+    border-radius: 10px;
+    .star-container {
+      i {
+        color: goldenrod;
+        margin-bottom: 0.5rem;
+
+        &:not(:last-child) {
+          margin-right: 0.2rem;
+        }
+      }
+    }
+    p {
+      color: $darkmagenta;
+      font: {
+        weight: $fbold;
+      }
+    }
+  }
+}
+
+.review-container {
+  .review-box {
+    padding: 1.25rem 1rem;
+    background: $darkmagenta;
+    border-radius: 10px;
+    color: white;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    .person-info-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin: 0 0 1.25rem;
+
+      .img-box {
+        width: 35px;
+        height: 35px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-right: 1.5rem;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .name-wrapper {
+      p {
+        &.name {
+          font-weight: $fmed;
+        }
+        &.status {
+          color: $softpink;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .bg-container {
+    .top-bg,
+    .last-bg {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  main {
+    height: 100%;
+    width: 100%;
+    padding: 2rem 8.5rem;
+  }
+
+  .wrapper {
+    .header-container {
+      display: inline-block;
+      margin: 0;
+      margin-right: 4rem;
+      text-align: start;
+      width: 25rem;
+    }
+  }
+
+  .top-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+  .ratings-container {
+    width: 100%;
+    display: flex;
+    padding-left: 20rem;
+    .ratings-box {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: fit-content;
+      &:nth-of-type(2) {
+        margin-left: 2rem;
+      }
+
+      &:nth-of-type(3) {
+        margin-left: 4rem;
+      }
+
+      .star-container {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .review-container {
+    position: relative;
+    display: flex;
+    height: auto;
+    .review-box {
+      width: 20rem;
+
+      &:not(:last-child) {
+        margin-bottom: 0;
+      }
+
+      &.box2 {
+        position: absolute;
+        left: 22.5rem;
+        bottom: -2rem;
+      }
+
+      &.box3 {
+        position: absolute;
+        left: 45rem;
+        bottom: -4rem;
+      }
+    }
+  }
+}
